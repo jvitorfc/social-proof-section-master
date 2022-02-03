@@ -1,0 +1,170 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Spartan', sans-serif;
+}
+:root {
+	--Very-Dark-Magenta: hsl(300, 43%, 22%);
+	--Soft-Pink: hsl(333, 80%, 67%);
+	--Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+	--Light-Grayish-Magenta: hsl(300, 24%, 96%);
+	--White: hsl(0, 0%, 100%);
+}
+body {
+	height: 100vh;
+	width: 100%;
+
+	padding: 2.7rem 7rem;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+		'area-1 area-2'
+		'area-3 area-3';
+}
+
+.info {
+	grid-area: area-1;
+
+	margin-bottom: 1.2rem;
+}
+.info__title {
+	font-size: 42px;
+	width: 55%;
+
+	color: var(--Very-Dark-Magenta);
+
+	margin-bottom: 1.25rem;
+}
+.info__description {
+	width: 60%;
+
+	color: var(--Dark-Grayish-Magenta);
+
+	margin-bottom: 1rem;
+}
+.rate {
+	grid-area: area-2;
+}
+
+.cards {
+	grid-area: area-3;
+	display: flex;
+}
+.rate {
+	display: flex;
+	flex-direction: column;
+
+	gap: 3rem;
+
+	margin-bottom: 2rem;
+
+	color: var(--Very-Dark-Magenta);
+	font-weight: 700;
+}
+.rate__item {
+	display: flex;
+	align-items: center;
+
+	gap: 0.6rem;
+
+	width: fit-content;
+}
+.rate__item:nth-child(2) {
+	margin-left: 2.4rem;
+}
+.rate__item:nth-child(3) {
+	margin-left: 6rem;
+}
+
+.cards {
+	display: flex;
+	gap: 2rem;
+
+	padding-bottom: 2rem;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+
+	padding: 2.25rem 1.75rem;
+	height: fit-content;
+
+	border-radius: 10px;
+
+	background-color: var(--Very-Dark-Magenta);
+	color: var(--White);
+}
+
+.card:nth-child(2) {
+	margin-top: 1rem;
+}
+.card:nth-child(3) {
+	margin-top: 3rem;
+}
+
+.card__profile {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	font-size: 1rem;
+}
+
+.card__profile img {
+	border-radius: 100%;
+	width: 10%;
+}
+
+.card__name span {
+	color: var(--Soft-Pink);
+}
+
+.card__avaliation {
+	font-size: 0.8rem;
+	width: 80%;
+}
+
+@media (max-width: 875px) {
+	body {
+		display: block;
+		padding: 3rem 2rem;
+	}
+
+	.info__title {
+		font-size: 32px;
+	}
+	.info__title,
+	.info__description {
+		width: 100%;
+		text-align: center;
+	}
+
+	.rate {
+		align-items: center;
+		gap: 1rem;
+	}
+	.rate__item {
+		flex-direction: column;
+	}
+	.rate__item:nth-child(2),
+	.rate__item:nth-child(3) {
+		margin-left: 0rem;
+	}
+
+	.cards {
+		flex-direction: column;
+	}
+	.card:nth-child(2),
+	.card:nth-child(3) {
+		margin-top: 0rem;
+	}
+
+	.card__profile img {
+		width: 20%;
+	}
+}
